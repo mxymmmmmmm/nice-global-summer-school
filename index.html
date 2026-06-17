@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NICE Global Summer School 2026 — 同济招募</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+
+  :root {
+    --pink:  #ED028B;
+    --pink-l:#FDE2F1;
+    --cyan:  #00ADEF;
+    --cyan-l:#D9F2FC;
+    --gray:  #949599;
+    --gr-l:  #F4F5F6;
+    --ink:  #1A1B1D;
+  }
+
+  body {
+    font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* ── PAGE ── */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 32px 60px;
+  }
+
+  /* ── TOP IMAGE ── */
+  .top-image {
+    margin-bottom: 0px;
+  }
+  .top-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* ── TITLE BLOCK ── */
+  .title-block {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .title-block::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--cyan);
+    margin: 18px auto 0;
+    border-radius: 2px;
+  }
+  .title-zh {
+    font-size: clamp(20px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  .title-en {
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 400;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0 28px;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gr-l);
+  }
+  .section-divider span {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pink);
+    white-space: nowrap;
+  }
+
+  /* ── BILINGUAL PARAGRAPH PAIR ── */
+  .para-pair {
+    margin-bottom: 28px;
+  }
+  .para-en {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.85;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+  .para-en strong {
+    color: var(--cyan);
+    font-weight: 600;
+  }
+  .para-zh {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.8;
+    padding: 14px 18px;
+    background: var(--gr-l);
+    border-radius: 0;
+    border-left: 3px solid var(--pink);
+    text-align: justify;
+  }
+  .para-zh strong {
+    color: var(--pink);
+    font-weight: 600;
+  }
+
+  /* ── BULLET PAIR ── */
+  .bullet-section {
+    margin-bottom: 32px;
+  }
+  .bullet-en {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 4px;
+  }
+  .bullet-en li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .bullet-en li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+  .bullet-zh {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .bullet-zh li {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 4px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #E8E8EA;
+    border-radius: 0;
+    overflow: hidden;
+    margin-top: 28px;
+  }
+  .info-cell {
+    background: #fff;
+    padding: 18px 20px;
+  }
+  .info-cell .label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 6px;
+  }
+  .info-cell .val-en {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .info-cell .val-zh {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  .info-cell.pink-accent { border-top: 3px solid var(--pink); }
+  .info-cell.cyan-accent { border-top: 3px solid var(--cyan); }
+
+  /* ── CTA ── */
+  .cta {
+    margin-top: 48px;
+    padding: 36px 32px;
+    border-radius: 16px;
+    border: 2px solid var(--pink);
+    text-align: center;
+  }
+  .cta-title-en {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--pink);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .cta-title-zh {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--cyan);
+    margin-bottom: 24px;
+  }
+  .cta-qr {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed var(--gray);
+    border-radius: 12px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 11px;
+  }
+  .cta-hint-en {
+    font-size: 13px;
+    color: var(--pink);
+    margin-bottom: 6px;
+  }
+  .cta-hint-zh {
+    font-size: 11px;
+    color: var(--gray);
+    margin-bottom: 18px;
+  }
+  .cta-note {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--gr-l);
+  }
+
+  /* ── DEADLINE BAR ── */
+  .deadline-bar {
+    margin-top: 28px;
+    padding: 14px 20px;
+    background: #FFF8F0;
+    border-radius: 10px;
+    border-left: 4px solid #F5A623;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .deadline-bar .icon { font-size: 18px; }
+  .deadline-bar .text-zh {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #B8600A;
+  }
+  .deadline-bar .text-en {
+    font-size: 12px;
+    color: #B8600A;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 24px 16px 48px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .cta { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP IMAGE -->
+  <div class="top-image">
+    <img src="banner4.jpg" alt="Call for Tongji Student Participants — The 1st NICE Global Summer School">
+  </div>
+
+  <!-- POSTER BODY -->
+  <div class="page">
+
+  <!-- ═══ PARAGRAPH 1 ═══ -->
+  <div class="para-pair">
+    <div class="para-en">From 29 July to 11 August 2026, the 1st <strong>NICE Global Summer School</strong> will take place at Tongji University. Co-organised by the <strong>Tongji Sino-Finnish Centre</strong> and the <strong>College of Design and Innovation</strong>, the summer school is themed "<strong>China–Northern Europe Co-Creation: A Living Lab for Future Human Flourishing.</strong>" The programme will bring 20 outstanding students from leading European innovation universities to Tongji. Together with these European students, you will learn, conduct field research, design, and create in cross-cultural teams.</div>
+    <div class="para-zh">2026年7月29日至8月11日，第一届 NICE Global Summer School 将在同济大学举行。本次夏校由同济大学<strong>中芬中心</strong>与<strong>设计创意学院</strong>联合主办，以"<strong>中国—北欧共创：人类未来幸福生活现场</strong>"为主题，邀请20位来自欧洲顶尖创新大学的优秀学生来到同济，与同济学生共同学习、调研、设计与创造。</div>
+  </div>
+
+  <!-- ═══ PARAGRAPH 2 ═══ -->
+  <div class="para-pair">
+    <div class="para-en">The summer school will be guided by an international teaching team of professors from <strong>Delft University of Technology</strong>, <strong>Aalto University</strong>, the <strong>University of Lapland</strong>, and <strong>Tongji University</strong>, with a focus on cutting-edge areas including <strong>wellbeing design, interaction design, service design, and social innovation</strong>.</div>
+    <div class="para-zh">本次夏校导师团队由来自<strong>荷兰代尔夫特理工大学</strong>、<strong>芬兰阿尔托大学</strong>、<strong>芬兰拉普兰大学</strong>及<strong>同济大学</strong>的教授组成，聚焦<strong>福祉设计、交互设计、服务设计与社会创新</strong>等前沿方向。</div>
+  </div>
+
+  <!-- ═══ PARAGRAPH 3 ═══ -->
+  <div class="para-pair">
+    <div class="para-en">This is a high-intensity, fully English, cross-cultural co-creation summer school. Selected Tongji students will work in mixed teams with European students on wellbeing innovation challenges. Through real-world community, urban, cultural, and enterprise settings, teams will complete a full design process: field research, problem framing, concept development, prototyping, and final presentation.</div>
+    <div class="para-zh">这是一次<strong>高强度、全英文、跨文化</strong>的国际共创夏校。入选同济学生将与欧洲学生组成混合团队，围绕福祉创新相关议题，在真实社区、城市、文化与企业场景中完成调研、问题定义、概念生成、原型制作和最终展示。</div>
+  </div>
+
+  <!-- ═══ PARAGRAPH 4 ═══ -->
+  <div class="para-pair">
+    <div class="para-en">We welcome Tongji students with an <strong>open mindset, the ability to collaborate in English, cross-cultural awareness, and strong creative potential</strong>. The programme is open to students from <strong>all academic disciplines and backgrounds</strong>. Whether you study design, engineering, architecture, computer science, business or any other field, you are encouraged to apply if you are interested in future wellbeing, innovation, and cross-cultural collaboration. The programme lasts two weeks, and selected students must <strong>participate fully</strong> in all lectures, fieldwork, company visits, workshops, teamwork, prototyping, and final presentations. Please apply only after confirming that you have the time and energy to fully commit. Once admitted, students are expected to honour their commitment and should not withdraw without a valid reason or attend selectively.</div>
+    <div class="para-zh">我们期待具有<strong>开放视野、全英文协作能力、跨文化沟通意识和创新能力</strong>的同济学生报名。本项目面向同济大学<strong>所有专业背景</strong>的本科生、硕士生和博士生开放。无论你来自设计、工程、建筑、计算机、管理、或其他学科，只要你对未来福祉、创新实践和跨文化合作充满兴趣，都欢迎申请。项目为期两周，入选同学须<strong>全程参加</strong>，完整投入课程学习、实地调研、企业参访、工作坊共创、原型制作和成果展示等全部环节。请在确认时间与精力允许后再提交申请；一经录取，应认真履行参与承诺，不得无故中途退出或选择性参加。</div>
+  </div>
+
+  <!-- ═══ DIVIDER ═══ -->
+  <div class="section-divider"><span>What You Will Gain · 你将获得</span></div>
+
+  <!-- ═══ BULLET PAIRS ═══ -->
+  <div class="bullet-section">
+
+    <ul class="bullet-en">
+      <li>the opportunity to co-create closely with excellent European students</li>
+    </ul>
+    <ul class="bullet-zh">
+      <li>与欧洲优秀学生深度共创的机会</li>
+    </ul>
+
+    <ul class="bullet-en">
+      <li>fully English international learning and project experience</li>
+    </ul>
+    <ul class="bullet-zh">
+      <li>全英文国际学习与项目实践经验</li>
+    </ul>
+
+    <ul class="bullet-en">
+      <li>guidance from a world-class teaching team</li>
+    </ul>
+    <ul class="bullet-zh">
+      <li>世界顶尖教授团队的课程指导</li>
+    </ul>
+
+    <ul class="bullet-en">
+      <li>design research and innovation training in real-world settings</li>
+    </ul>
+    <ul class="bullet-zh">
+      <li>真实场景中的设计研究与创新训练</li>
+    </ul>
+
+    <ul class="bullet-en">
+      <li>cutting-edge methods in wellbeing design, interaction design, service design, and social innovation</li>
+    </ul>
+    <ul class="bullet-zh">
+      <li>福祉设计、交互设计、服务设计与社会创新的前沿方法</li>
+    </ul>
+
+    <ul class="bullet-en">
+      <li>systematic development of cross-cultural communication, teamwork, prototyping, and public presentation skills</li>
+    </ul>
+    <ul class="bullet-zh">
+      <li>跨文化沟通、团队协作、原型表达和公开展示能力的系统提升</li>
+    </ul>
+
+  </div>
+
+  <!-- ═══ DIVIDER ═══ -->
+  <div class="section-divider"><span>Programme Info · 项目信息</span></div>
+
+  <!-- ═══ INFO GRID ═══ -->
+  <div class="info-grid">
+    <div class="info-cell pink-accent">
+      <div class="label">时间 · Time</div>
+      <div class="val-en">29 July – 11 August 2026</div>
+      <div class="val-zh">2026年7月29日 — 8月11日</div>
+    </div>
+    <div class="info-cell cyan-accent">
+      <div class="label">地点 · Location</div>
+      <div class="val-en">Tongji Sino-Finnish Centre, NICE 2035 Community, and related sites</div>
+      <div class="val-zh">同济大学中芬中心、NICE 2035社区及相关实践场景</div>
+    </div>
+    <div class="info-cell cyan-accent">
+      <div class="label">语言 · Language</div>
+      <div class="val-en">English</div>
+      <div class="val-zh">英文</div>
+    </div>
+    <div class="info-cell pink-accent">
+      <div class="label">对象 · Eligibility</div>
+      <div class="val-en">Current Tongji undergraduate, master's, and doctoral students from all majors</div>
+      <div class="val-zh">同济大学在读本科生、硕士生、博士生（不限专业）</div>
+    </div>
+    <div class="info-cell pink-accent">
+      <div class="label">学费 · Tuition</div>
+      <div class="val-en">Free of charge</div>
+      <div class="val-zh">免费</div>
+    </div>
+    <div class="info-cell cyan-accent">
+      <div class="label">报名 · Application</div>
+      <div class="val-en">Please complete the application link / scan the QR code</div>
+      <div class="val-zh">请填写报名链接 / 扫描二维码</div>
+    </div>
+  </div>
+
+  <!-- ═══ CTA ═══ -->
+  <div class="cta">
+    <div class="cta-title-en">The 1st NICE Global Summer School looks forward to your participation</div>
+    <div class="cta-title-zh">第一届 NICE Global 夏校期待你的加入</div>
+    <img src="qrcode.jpg" alt="QR Code - 报名二维码" style="width:120px;height:120px;border-radius:12px;display:block;margin:0 auto;">
+    <div style="text-align:center;margin-top:8px;font-size:11px;color:#949599;word-break:break-all;"><a href="https://docs.qq.com/form/page/DUUVPeXB1eVZrVUhs" target="_blank" style="color:#949599;text-decoration:none;">https://docs.qq.com/form/page/DUUVPeXB1eVZrVUhs</a></div>
+    <div class="cta-hint-en" style="text-align:center;color:var(--pink);margin-top:18px;">Please scan the QR code or click the link to apply</div>
+    <div class="cta-hint-zh" style="text-align:center;color:#555;">请扫描二维码或点击链接报名</div>
+    <div class="cta-note">
+      Application Deadline: 17:00, 26 June 2026 &nbsp;·&nbsp; 报名截止：2026年6月26日 17:00
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
